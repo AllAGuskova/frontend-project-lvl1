@@ -2,4 +2,4 @@
 
 [![Actions Status](https://github.com/AllAGuskova/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/AllAGuskova/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a77b22b763b9e0648e92/maintainability)](https://codeclimate.com/github/AllAGuskova/frontend-project-lvl1/maintainability)
-![example workflow](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/<WORKFLOW_FILE>/badge.svg)
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
