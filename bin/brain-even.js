@@ -4,8 +4,9 @@ import {
   askUser,
   parityCheck,
   parseUserAnswer,
-  compareLogicalOperators,
+  checkCorrectness,
 } from '../src/even.js';
+
 import greeting from '../src/cli.js';
 
 const userName = greeting();
@@ -23,7 +24,7 @@ for (let i = 0; i < 3; i += 1) {
 
   const isAnswerYes = parseUserAnswer(answer);
 
-  const isCorrectAnswer = compareLogicalOperators(isAnswerYes, isOdd, userName);
+  const isCorrectAnswer = checkCorrectness(isAnswerYes, isOdd, userName);
   if (isCorrectAnswer) {
     counterCorrectAnswers += 1;
   }
