@@ -21,7 +21,7 @@ const parseUserAnswer = (userAnswer) => {
 const checkCorrectness = (isUserAnswerYes, isOddNumber, userName) => {
   let isAnswerCorrect = false;
   if (isUserAnswerYes === null) {
-    console.log(`Answer is wrong. Let's try again, ${userName}`);
+    console.log();
     isAnswerCorrect = false;
   }
   if ((isUserAnswerYes && isOddNumber) || (!isUserAnswerYes && !isOddNumber)) {
@@ -30,7 +30,7 @@ const checkCorrectness = (isUserAnswerYes, isOddNumber, userName) => {
   }
   if ((!isUserAnswerYes && isOddNumber) || (isUserAnswerYes && !isOddNumber)) {
     console.log(
-      `'yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${userName}`,
+      `'yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${userName}!`,
     );
     isAnswerCorrect = false;
   }
