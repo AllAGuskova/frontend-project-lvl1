@@ -12,10 +12,8 @@ import greeting from "../src/cli.js";
 const userName = greeting();
 
 console.log("What is the result of the expression?");
-
 let counterCorrectAnswers = 0;
 const operators = ["+", "-", "*"];
-
 for (let i = 0; i < 3; i += 1) {
   const randomNumber = getRandomNumber();
   const randomNumber2 = getRandomNumber();
@@ -23,13 +21,13 @@ for (let i = 0; i < 3; i += 1) {
 
   console.log(`Question: ${randomNumber} ${randomOperator} ${randomNumber2}`);
 
+  const userAnswer = askUser();
+
   const computedMathExpression = calculate(
     randomNumber,
     randomNumber2,
     randomOperator
   );
-
-  const userAnswer = askUser();
 
   const isCorrectAnswer = checkCorrectness(
     userAnswer,

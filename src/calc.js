@@ -2,7 +2,7 @@ import readlineSync from "readline-sync";
 
 const askUser = () => {
   const userAnswer = readlineSync.question("Your answer: ");
-  return userAnswer;
+  return Number(userAnswer);
 };
 const getRandomNumber = () => Math.floor(Math.random() * 100);
 
