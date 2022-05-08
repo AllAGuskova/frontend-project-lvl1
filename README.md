@@ -10,4 +10,4 @@
 
 This a Game  [Parity Check](https://asciinema.org/a/E64VV9m3B0HkeglcXUaBzfMLF)
 
-[![demo](https://asciinema.org/a/https://asciinema.org/a/E64VV9m3B0HkeglcXUaBzfMLF.svg)](https://asciinema.org/a/https://asciinema.org/a/E64VV9m3B0HkeglcXUaBzfMLF?autoplay=1) 
+[![demo](https://asciinema.org/a/E64VV9m3B0HkeglcXUaBzfMLF.svg)](https://asciinema.org/a/E64VV9m3B0HkeglcXUaBzfMLF?autoplay=1) 
