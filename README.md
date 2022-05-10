@@ -8,6 +8,6 @@
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#<your-project-url>)
 
 
-This a Game  [Parity Check](https://asciinema.org/connect/24bb0457-6701-4072-9455-c9b11733621f)
+This a Game  [Parity Check]( https://asciinema.org/a/g8l8yCpHL0yL6CMV94pBQChoH)
 
-[![demo](https://asciinema.org/a/E64VV9m3B0HkeglcXUaBzfMLF.svg)](https://asciinema.org/a/E64VV9m3B0HkeglcXUaBzfMLF?autoplay=1) 
+[![demo](https://asciinema.org/a/g8l8yCpHL0yL6CMV94pBQChoH.svg)](https://asciinema.org/a/g8l8yCpHL0yL6CMV94pBQChoH?autoplay=1) 
