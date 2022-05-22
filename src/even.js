@@ -1,18 +1,12 @@
-import readlineSync from "readline-sync";
-
-const askUser = () => {
-  const userAnswer = readlineSync.question("Your answer: ");
-  return userAnswer;
-};
-const getRandomNumber = () => Math.floor(Math.random() * 100);
+import { askUser, getRandomNumber } from "../src/index.js";
 
 const parityCheck = (n) => n % 2 === 0;
 
 const parseUserAnswer = (userAnswer) => {
-  if (userAnswer === "yes") {
+  if (userAnswer.toLowerCase() === "yes") {
     return true;
   }
-  if (userAnswer === "no") {
+  if (userAnswer.toLowerCase() === "no") {
     return false;
   }
   return null;
@@ -40,10 +34,24 @@ const checkCorrectness = (isUserAnswerYes, isOddNumber, userName) => {
   }
   return isAnswerCorrect;
 };
-export {
-  getRandomNumber,
-  askUser,
-  parityCheck,
-  parseUserAnswer,
-  checkCorrectness,
+
+const game = (userName) => {
+  const randomLimit = 100;
+  const randomNumber = getRandomNumber(randomLimit);
+
+  console.log(`Question: ${randomNumber}`);
+
+  const answer = askUser();
+
+  const isOdd = parityCheck(randomNumber);
+
+  const isAnswerYes = parseUserAnswer(answer);
+
+  const isCorrectAnswer = checkCorrectness(isAnswerYes, isOdd, userName);
+  return isCorrectAnswer;
 };
+
+const showRules = () =>
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
+export { game, showRules };
