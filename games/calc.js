@@ -1,15 +1,11 @@
-import readlineSync from "readline-sync";
-
-const askUser = () => {
-  const userAnswer = readlineSync.question("Your answer: ");
-  return Number(userAnswer);
-};
-const getRandomNumber = () => Math.floor(Math.random() * 100);
+import { askUser, getRandomNumber } from "../src/index.js";
 
 const getRandomElement = (operators) => {
   const randomIndex = Math.floor(Math.random() * operators.length);
   return operators[randomIndex];
 };
+
+const operators = ["+", "-", "*"];
 
 const calculate = (randomNumber, randomNumber2, operator) => {
   switch (operator) {
@@ -38,10 +34,30 @@ const checkCorrectness = (userAnswer, computedMathExpression, userName) => {
   return isAnswerCorrect;
 };
 
-export {
-  askUser,
-  getRandomNumber,
-  getRandomElement,
-  calculate,
-  checkCorrectness,
+const game = (userName) => {
+  const randomLimit = 100;
+  const randomNumber = getRandomNumber(randomLimit);
+  const randomNumber2 = getRandomNumber(randomLimit);
+  const randomOperator = getRandomElement(operators);
+
+  console.log(`Question: ${randomNumber} ${randomOperator} ${randomNumber2}`);
+
+  const userAnswer = Number(askUser());
+
+  const computedMathExpression = calculate(
+    randomNumber,
+    randomNumber2,
+    randomOperator
+  );
+
+  const isCorrectAnswer = checkCorrectness(
+    userAnswer,
+    computedMathExpression,
+    userName
+  );
+  return isCorrectAnswer;
 };
+
+const showRules = () => console.log("What is the result of the expression?");
+
+export { game, showRules };
