@@ -14,15 +14,12 @@ const parseUserAnswer = (userAnswer) => {
 
 const checkCorrectness = (isUserAnswerYes, isOddNumber, userName) => {
   let isAnswerCorrect = false;
-  if (isUserAnswerYes === null) {
-    console.log(`It is wrong answer ;(. Let's try again, ${userName}!`);
-    isAnswerCorrect = false;
-  } else if (
-    (isUserAnswerYes && isOddNumber) ||
-    (!isUserAnswerYes && !isOddNumber)
-  ) {
+  if ((isUserAnswerYes && isOddNumber) || (!isUserAnswerYes && !isOddNumber)) {
     console.log("Correct!");
     isAnswerCorrect = true;
+  } else if (isUserAnswerYes === null) {
+    console.log(`It is wrong answer ;(. Let's try again, ${userName}!`);
+    isAnswerCorrect = false;
   } else if (
     (!isUserAnswerYes && isOddNumber) ||
     (isUserAnswerYes && !isOddNumber)
