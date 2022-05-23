@@ -1,20 +1,22 @@
-import { askUser, getRandomNumber } from "../src/index.js";
+import { askUser, getRandomNumber } from '../src/index.js';
 
 const commonDivisorGreatest = (randomNumber, randomNumber2) => {
   let divisor = randomNumber;
-  while (randomNumber % divisor !== 0 || randomNumber2 % divisor !== 0) {
-    divisor = divisor - 1;
+  let numberFirst = randomNumber;
+  let numberSecond = randomNumber2;
+  while (numberFirst % divisor !== 0 || numberSecond % divisor !== 0) {
+    divisor -= 1;
   }
-  if (randomNumber2 === 0) {
-    return randomNumber;
+  if (numberSecond === 0) {
+    return numberFirst;
   }
-  if (randomNumber === 0) {
-    return randomNumber2;
+  if (numberFirst === 0) {
+    return numberSecond;
   }
-  if (randomNumber > randomNumber2) {
-    randomNumber = randomNumber - randomNumber2;
+  if (numberFirst > numberSecond) {
+    numberFirst -= numberSecond;
   } else {
-    randomNumber2 = randomNumber2 - randomNumber;
+    numberSecond -= numberFirst;
   }
   return divisor;
 };
@@ -22,11 +24,11 @@ const commonDivisorGreatest = (randomNumber, randomNumber2) => {
 const checkCorrectness = (userAnswer, divisor, userName) => {
   let isAnswerCorrect;
   if (userAnswer === divisor) {
-    console.log("Correct!");
+    console.log('Correct!');
     isAnswerCorrect = true;
   } else {
     console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${divisor}''. Let's try again, ${userName}!`
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${divisor}''. Let's try again, ${userName}!`,
     );
     isAnswerCorrect = false;
   }
@@ -49,7 +51,6 @@ const game = (userName) => {
   return isCorrectAnswer;
 };
 
-const showRules = () =>
-  console.log("Find the greatest common divisor of given numbers.");
+const showRules = () => console.log('Find the greatest common divisor of given numbers.');
 
 export { game, showRules };

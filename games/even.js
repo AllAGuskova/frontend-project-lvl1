@@ -1,12 +1,12 @@
-import { askUser, getRandomNumber } from "../src/index.js";
+import { askUser, getRandomNumber } from '../src/index.js';
 
 const parityCheck = (n) => n % 2 === 0;
 
 const parseUserAnswer = (userAnswer) => {
-  if (userAnswer.toLowerCase() === "yes") {
+  if (userAnswer.toLowerCase() === 'yes') {
     return true;
   }
-  if (userAnswer.toLowerCase() === "no") {
+  if (userAnswer.toLowerCase() === 'no') {
     return false;
   }
   return null;
@@ -15,17 +15,17 @@ const parseUserAnswer = (userAnswer) => {
 const checkCorrectness = (isUserAnswerYes, isOddNumber, userName) => {
   let isAnswerCorrect = false;
   if ((isUserAnswerYes && isOddNumber) || (!isUserAnswerYes && !isOddNumber)) {
-    console.log("Correct!");
+    console.log('Correct!');
     isAnswerCorrect = true;
   } else if (isUserAnswerYes === null) {
     console.log(`It is wrong answer ;(. Let's try again, ${userName}!`);
     isAnswerCorrect = false;
   } else if (
-    (!isUserAnswerYes && isOddNumber) ||
-    (isUserAnswerYes && !isOddNumber)
+    (!isUserAnswerYes && isOddNumber)
+    || (isUserAnswerYes && !isOddNumber)
   ) {
     console.log(
-      `'yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${userName}!`
+      `'yes' is wrong answer ;(. Correct answer was 'no'. Let's try again, ${userName}!`,
     );
     isAnswerCorrect = false;
   }
@@ -48,7 +48,6 @@ const game = (userName) => {
   return isCorrectAnswer;
 };
 
-const showRules = () =>
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const showRules = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 export { game, showRules };
