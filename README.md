@@ -10,4 +10,4 @@
 
 These are games: 2 wins and 2 losses [Brain-Even and Brain-Calc]( https://asciinema.org/a/prY3h1lAPTTc4qXVbbY5b88DB)
 
-[![demo](https://asciinema.org/a/g8l8yCpHL0yL6CMV94pBQChoH.svg)](https://asciinema.org/a/g8l8yCpHL0yL6CMV94pBQChoH?autoplay=1) 
+[![demo](https://asciinema.org/a/prY3h1lAPTTc4qXVbbY5b88DB)](https://asciinema.org/a/prY3h1lAPTTc4qXVbbY5b88DB) 
