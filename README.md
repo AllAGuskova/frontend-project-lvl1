@@ -8,6 +8,6 @@
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#<your-project-url>)
 
 
-These are games: 2 wins and 2 losses [Brain-Even and Brain-Calc]( https://asciinema.org/a//tmp/tmptabs_wx0-ascii.cast)
+These are games: 2 wins and 2 losses [Brain-Even and Brain-Calc]( https://asciinema.org/a/prY3h1lAPTTc4qXVbbY5b88DB)
 
 [![demo](https://asciinema.org/a/g8l8yCpHL0yL6CMV94pBQChoH.svg)](https://asciinema.org/a/g8l8yCpHL0yL6CMV94pBQChoH?autoplay=1) 
