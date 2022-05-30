@@ -15,3 +15,7 @@ These are games: 2 wins and 2 losses [Brain-Even and Brain-Calc]( https://asciin
 This is a game: [Brain-Gcd]( https://asciinema.org/a/zYHJNliaO37mY5uGSuqZxtRj9)
 
 [![asciicast](https://asciinema.org/a/zYHJNliaO37mY5uGSuqZxtRj9.png)](https://asciinema.org/a/zYHJNliaO37mY5uGSuqZxtRj9)
+
+This is a game: [Brain-Arithmetic Progression]( https://asciinema.org/a/b2UegxkXoONTxdTEfrwRzSpQu)
+
+[![asciicast](https://asciinema.org/a/b2UegxkXoONTxdTEfrwRzSpQu.png)](https://asciinema.org/a/b2UegxkXoONTxdTEfrwRzSpQu)
