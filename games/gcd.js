@@ -1,6 +1,6 @@
-import { askUser, getRandomNumber } from '../src/index.js';
+import { askUser, getRandomNumber } from "../src/index.js";
 
-const commonDivisorGreatest = (randomNumber, randomNumber2) => {
+const greatestCommonDivisor = (randomNumber, randomNumber2) => {
   let divisor = randomNumber;
   let numberFirst = randomNumber;
   let numberSecond = randomNumber2;
@@ -24,11 +24,11 @@ const commonDivisorGreatest = (randomNumber, randomNumber2) => {
 const checkCorrectness = (userAnswer, divisor, userName) => {
   let isAnswerCorrect;
   if (userAnswer === divisor) {
-    console.log('Correct!');
+    console.log("Correct!");
     isAnswerCorrect = true;
   } else {
     console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${divisor}''. Let's try again, ${userName}!`,
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${divisor}'. Let's try again, ${userName}!`
     );
     isAnswerCorrect = false;
   }
@@ -44,13 +44,14 @@ const game = (userName) => {
 
   const userAnswer = Number(askUser());
 
-  const divisor = commonDivisorGreatest(randomNumber, randomNumber2);
+  const divisor = greatestCommonDivisor(randomNumber, randomNumber2);
 
   const isCorrectAnswer = checkCorrectness(userAnswer, divisor, userName);
 
   return isCorrectAnswer;
 };
 
-const showRules = () => console.log('Find the greatest common divisor of given numbers.');
+const showRules = () =>
+  console.log("Find the greatest common divisor of given numbers.");
 
 export { game, showRules };

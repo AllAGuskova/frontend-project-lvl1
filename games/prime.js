@@ -1,11 +1,20 @@
 import { askUser, getRandomNumber } from "../src/index.js";
 
-const parityCheck = (n) => n % 2 === 0;
+const isPrime = (number) => {
+  for (let i = 2; i <= number; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+    return number > 1;
+  }
+  return null;
+};
 
 const parseUserAnswer = (userAnswer) => {
   if (userAnswer === "yes") {
     return true;
-  } else if (userAnswer === "no") {
+  }
+  if (userAnswer === "no") {
     return false;
   }
   return null;
@@ -13,19 +22,19 @@ const parseUserAnswer = (userAnswer) => {
 
 const checkCorrectness = (
   isUserAnswerYes,
-  isOddNumber,
+  numberPrime,
   userName,
   userAnswer
 ) => {
   let isAnswerCorrect = false;
-  if ((isUserAnswerYes && isOddNumber) || (!isUserAnswerYes && !isOddNumber)) {
+  if ((isUserAnswerYes && numberPrime) || (!isUserAnswerYes && !numberPrime)) {
     console.log("Correct!");
     isAnswerCorrect = true;
   }
-  if ((!isUserAnswerYes && isOddNumber) || (isUserAnswerYes && !isOddNumber)) {
+  if ((!isUserAnswerYes && numberPrime) || (isUserAnswerYes && !numberPrime)) {
     console.log(
       `'${userAnswer}' is wrong answer ;(. Correct answer was '${
-        isOddNumber ? "yes" : "no"
+        numberPrime ? "yes" : "no"
       }'. Let's try again, ${userName}!`
     );
     isAnswerCorrect = false;
@@ -45,13 +54,13 @@ const game = (userName) => {
 
   const userAnswer = askUser();
 
-  const isOdd = parityCheck(randomNumber);
+  const numberPrime = isPrime(randomNumber);
 
   const isAnswerYes = parseUserAnswer(userAnswer);
 
   const isCorrectAnswer = checkCorrectness(
     isAnswerYes,
-    isOdd,
+    numberPrime,
     userName,
     userAnswer
   );
@@ -59,6 +68,6 @@ const game = (userName) => {
 };
 
 const showRules = () =>
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  console.log('Answer "yes" if the number is prime, otherwise answer "no".');
 
 export { game, showRules };

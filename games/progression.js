@@ -18,7 +18,7 @@ const checkCorrectness = (userAnswer, hiddenElement, userName) => {
     isAnswerCorrect = true;
   } else {
     console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenElement}''. Let's try again, ${userName}!`
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenElement}'. Let's try again, ${userName}!`
     );
     isAnswerCorrect = false;
   }
@@ -34,7 +34,7 @@ const game = (userName) => {
 
   array[hiddenIndex] = "..";
 
-  console.log(`Question: ${array}`);
+  console.log(`Question: ${array.join(" ")}`);
 
   const userAnswer = Number(askUser());
 
