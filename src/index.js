@@ -1,13 +1,13 @@
-import readlineSync from 'readline-sync';
+import readlineSync from "readline-sync";
 
 const greeting = () => {
-  const userName = readlineSync.question('May I have your name? ');
+  const userName = readlineSync.question("May I have your name? ");
   console.log(`Hello, ${userName}!`);
   return userName;
 };
 
 const askUser = () => {
-  const userAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = readlineSync.question("Your answer: ");
   return userAnswer;
 };
 
@@ -30,5 +30,5 @@ const runGame = (game, showRules) => {
   }
 };
 export {
-  runGame, greeting, askUser, getRandomNumber,
+  runGame, greeting, askUser, getRandomNumber
 };
