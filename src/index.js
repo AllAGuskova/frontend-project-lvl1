@@ -24,7 +24,9 @@ const runGame = (game, showRules) => {
 
     if (isCorrectAnswer) {
       correctAnswersCounter += 1;
-    }
+    } if (!isCorrectAnswer) {
+      break;
+  }
   }
   if (correctAnswersCounter === rounds) {
     console.log(`Congratulations, ${userName}!`);
