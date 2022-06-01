@@ -1,4 +1,4 @@
-import { askUser, getRandomNumber } from "../index.js";
+import { askUser, getRandomNumber } from '../index.js';
 
 const arithmeticProgression = (firstElement, step) => {
   const arrayProgression = [firstElement];
@@ -14,11 +14,11 @@ const arithmeticProgression = (firstElement, step) => {
 const checkCorrectness = (userAnswer, hiddenElement, userName) => {
   let isAnswerCorrect;
   if (userAnswer === hiddenElement) {
-    console.log("Correct!");
+    console.log('Correct!');
     isAnswerCorrect = true;
   } else {
     console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenElement}'. Let's try again, ${userName}!`
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenElement}'. Let's try again, ${userName}!`,
     );
     isAnswerCorrect = false;
   }
@@ -32,9 +32,9 @@ const game = (userName) => {
   const hiddenIndex = getRandomNumber(array.length);
   const hiddenElement = array[hiddenIndex];
 
-  array[hiddenIndex] = "..";
+  array[hiddenIndex] = '..';
 
-  console.log(`Question: ${array.join(" ")}`);
+  console.log(`Question: ${array.join(' ')}`);
 
   const userAnswer = Number(askUser());
 
@@ -43,7 +43,6 @@ const game = (userName) => {
   return isCorrectAnswer;
 };
 
-const showRules = () =>
-  console.log("What number is missing in the progression?");
+const showRules = () => console.log('What number is missing in the progression?');
 
 export { game, showRules };
