@@ -1,19 +1,19 @@
-import { askUser, getRandomNumber } from '../src/index.js';
+import { askUser, getRandomNumber } from "../index.js";
 
 const getRandomElement = (operators) => {
   const randomIndex = Math.floor(Math.random() * operators.length);
   return operators[randomIndex];
 };
 
-const operators = ['+', '-', '*'];
+const operators = ["+", "-", "*"];
 
 const calculate = (randomNumber, randomNumber2, operator) => {
   switch (operator) {
-    case '+':
+    case "+":
       return randomNumber + randomNumber2;
-    case '-':
+    case "-":
       return randomNumber - randomNumber2;
-    case '*':
+    case "*":
       return randomNumber * randomNumber2;
     default:
       return NaN;
@@ -23,11 +23,11 @@ const calculate = (randomNumber, randomNumber2, operator) => {
 const checkCorrectness = (userAnswer, computedMathExpression, userName) => {
   let isAnswerCorrect;
   if (userAnswer === computedMathExpression) {
-    console.log('Correct!');
+    console.log("Correct!");
     isAnswerCorrect = true;
   } else {
     console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${computedMathExpression}'. Let's try again, ${userName}!`,
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${computedMathExpression}'. Let's try again, ${userName}!`
     );
     isAnswerCorrect = false;
   }
@@ -47,17 +47,17 @@ const game = (userName) => {
   const computedMathExpression = calculate(
     randomNumber,
     randomNumber2,
-    randomOperator,
+    randomOperator
   );
 
   const isCorrectAnswer = checkCorrectness(
     userAnswer,
     computedMathExpression,
-    userName,
+    userName
   );
   return isCorrectAnswer;
 };
 
-const showRules = () => console.log('What is the result of the expression?');
+const showRules = () => console.log("What is the result of the expression?");
 
 export { game, showRules };

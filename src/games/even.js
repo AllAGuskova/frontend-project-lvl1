@@ -1,19 +1,12 @@
-import { askUser, getRandomNumber } from '../src/index.js';
+import { askUser, getRandomNumber } from "../index.js";
 
-const isPrime = (number) => {
-  for (let i = 2; i < number; i += 1) {
-    if (number % i === 0) {
-      return false;
-    }
-  }
-  return true;
-};
+const parityCheck = (n) => n % 2 === 0;
 
 const parseUserAnswer = (userAnswer) => {
-  if (userAnswer === 'yes') {
+  if (userAnswer === "yes") {
     return true;
   }
-  if (userAnswer === 'no') {
+  if (userAnswer === "no") {
     return false;
   }
   return null;
@@ -21,20 +14,20 @@ const parseUserAnswer = (userAnswer) => {
 
 const checkCorrectness = (
   isUserAnswerYes,
-  numberPrime,
+  isOddNumber,
   userName,
-  userAnswer,
+  userAnswer
 ) => {
   let isAnswerCorrect = false;
-  if ((isUserAnswerYes && numberPrime) || (!isUserAnswerYes && !numberPrime)) {
-    console.log('Correct!');
+  if ((isUserAnswerYes && isOddNumber) || (!isUserAnswerYes && !isOddNumber)) {
+    console.log("Correct!");
     isAnswerCorrect = true;
   }
-  if ((!isUserAnswerYes && numberPrime) || (isUserAnswerYes && !numberPrime)) {
+  if ((!isUserAnswerYes && isOddNumber) || (isUserAnswerYes && !isOddNumber)) {
     console.log(
       `'${userAnswer}' is wrong answer ;(. Correct answer was '${
-        numberPrime ? 'yes' : 'no'
-      }'. Let's try again, ${userName}!`,
+        isOddNumber ? "yes" : "no"
+      }'. Let's try again, ${userName}!`
     );
     isAnswerCorrect = false;
   }
@@ -53,19 +46,20 @@ const game = (userName) => {
 
   const userAnswer = askUser();
 
-  const numberPrime = isPrime(randomNumber);
+  const isOdd = parityCheck(randomNumber);
 
   const isAnswerYes = parseUserAnswer(userAnswer);
 
   const isCorrectAnswer = checkCorrectness(
     isAnswerYes,
-    numberPrime,
+    isOdd,
     userName,
-    userAnswer,
+    userAnswer
   );
   return isCorrectAnswer;
 };
 
-const showRules = () => console.log('Answer "yes" if the number is prime, otherwise answer "no".');
+const showRules = () =>
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 export { game, showRules };

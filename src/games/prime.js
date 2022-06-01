@@ -1,12 +1,19 @@
-import { askUser, getRandomNumber } from '../src/index.js';
+import { askUser, getRandomNumber } from "../index.js";
 
-const parityCheck = (n) => n % 2 === 0;
+const isPrime = (number) => {
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
 
 const parseUserAnswer = (userAnswer) => {
-  if (userAnswer === 'yes') {
+  if (userAnswer === "yes") {
     return true;
   }
-  if (userAnswer === 'no') {
+  if (userAnswer === "no") {
     return false;
   }
   return null;
@@ -14,20 +21,20 @@ const parseUserAnswer = (userAnswer) => {
 
 const checkCorrectness = (
   isUserAnswerYes,
-  isOddNumber,
+  numberPrime,
   userName,
-  userAnswer,
+  userAnswer
 ) => {
   let isAnswerCorrect = false;
-  if ((isUserAnswerYes && isOddNumber) || (!isUserAnswerYes && !isOddNumber)) {
-    console.log('Correct!');
+  if ((isUserAnswerYes && numberPrime) || (!isUserAnswerYes && !numberPrime)) {
+    console.log("Correct!");
     isAnswerCorrect = true;
   }
-  if ((!isUserAnswerYes && isOddNumber) || (isUserAnswerYes && !isOddNumber)) {
+  if ((!isUserAnswerYes && numberPrime) || (isUserAnswerYes && !numberPrime)) {
     console.log(
       `'${userAnswer}' is wrong answer ;(. Correct answer was '${
-        isOddNumber ? 'yes' : 'no'
-      }'. Let's try again, ${userName}!`,
+        numberPrime ? "yes" : "no"
+      }'. Let's try again, ${userName}!`
     );
     isAnswerCorrect = false;
   }
@@ -46,19 +53,20 @@ const game = (userName) => {
 
   const userAnswer = askUser();
 
-  const isOdd = parityCheck(randomNumber);
+  const numberPrime = isPrime(randomNumber);
 
   const isAnswerYes = parseUserAnswer(userAnswer);
 
   const isCorrectAnswer = checkCorrectness(
     isAnswerYes,
-    isOdd,
+    numberPrime,
     userName,
-    userAnswer,
+    userAnswer
   );
   return isCorrectAnswer;
 };
 
-const showRules = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const showRules = () =>
+  console.log('Answer "yes" if the number is prime, otherwise answer "no".');
 
 export { game, showRules };

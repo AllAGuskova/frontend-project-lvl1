@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { game, showRules } from '../games/gcd.js';
+import { game, showRules } from "../src/games/gcd.js";
 
-import { runGame } from '../src/index.js';
+import { runGame } from "../src/index.js";
 
 runGame(game, showRules);
