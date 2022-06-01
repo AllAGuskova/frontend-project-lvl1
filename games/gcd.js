@@ -28,7 +28,7 @@ const checkCorrectness = (userAnswer, divisor, userName) => {
     isAnswerCorrect = true;
   } else {
     console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${divisor}'. Let's try again, ${userName}!`
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${divisor}'. Let's try again, ${userName}!`,
     );
     isAnswerCorrect = false;
   }
