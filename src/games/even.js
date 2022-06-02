@@ -1,12 +1,12 @@
-import { askUser, getRandomNumber } from '../index.js';
-
+import { askUser } from "../index.js";
+import { randomInteger } from "../function.js";
 const parityCheck = (n) => n % 2 === 0;
 
 const parseUserAnswer = (userAnswer) => {
-  if (userAnswer === 'yes') {
+  if (userAnswer === "yes") {
     return true;
   }
-  if (userAnswer === 'no') {
+  if (userAnswer === "no") {
     return false;
   }
   return null;
@@ -16,18 +16,18 @@ const checkCorrectness = (
   isUserAnswerYes,
   isOddNumber,
   userName,
-  userAnswer,
+  userAnswer
 ) => {
   let isAnswerCorrect = false;
   if ((isUserAnswerYes && isOddNumber) || (!isUserAnswerYes && !isOddNumber)) {
-    console.log('Correct!');
+    console.log("Correct!");
     isAnswerCorrect = true;
   }
   if ((!isUserAnswerYes && isOddNumber) || (isUserAnswerYes && !isOddNumber)) {
     console.log(
       `'${userAnswer}' is wrong answer ;(. Correct answer was '${
-        isOddNumber ? 'yes' : 'no'
-      }'. Let's try again, ${userName}!`,
+        isOddNumber ? "yes" : "no"
+      }'. Let's try again, ${userName}!`
     );
     isAnswerCorrect = false;
   }
@@ -39,8 +39,7 @@ const checkCorrectness = (
 };
 
 const game = (userName) => {
-  const randomLimit = 100;
-  const randomNumber = getRandomNumber(randomLimit);
+  const randomNumber = randomInteger(1, 100);
 
   console.log(`Question: ${randomNumber}`);
 
@@ -54,11 +53,12 @@ const game = (userName) => {
     isAnswerYes,
     isOdd,
     userName,
-    userAnswer,
+    userAnswer
   );
   return isCorrectAnswer;
 };
 
-const showRules = () => console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const showRules = () =>
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 export { game, showRules };

@@ -1,4 +1,5 @@
-import { askUser, getRandomNumber } from '../index.js';
+import { askUser } from "../index.js";
+import { randomInteger } from "../function.js";
 
 const arithmeticProgression = (firstElement, step) => {
   const arrayProgression = [firstElement];
@@ -14,11 +15,11 @@ const arithmeticProgression = (firstElement, step) => {
 const checkCorrectness = (userAnswer, hiddenElement, userName) => {
   let isAnswerCorrect;
   if (userAnswer === hiddenElement) {
-    console.log('Correct!');
+    console.log("Correct!");
     isAnswerCorrect = true;
   } else {
     console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenElement}'. Let's try again, ${userName}!`,
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${hiddenElement}'. Let's try again, ${userName}!`
     );
     isAnswerCorrect = false;
   }
@@ -26,15 +27,15 @@ const checkCorrectness = (userAnswer, hiddenElement, userName) => {
 };
 
 const game = (userName) => {
-  const firstElement = getRandomNumber(100);
-  const step = getRandomNumber(10);
+  const firstElement = randomInteger(1, 100);
+  const step = randomInteger(1, 10);
   const array = arithmeticProgression(firstElement, step);
-  const hiddenIndex = getRandomNumber(array.length);
+  const hiddenIndex = randomInteger(1, array.length - 1);
   const hiddenElement = array[hiddenIndex];
 
-  array[hiddenIndex] = '..';
+  array[hiddenIndex] = "..";
 
-  console.log(`Question: ${array.join(' ')}`);
+  console.log(`Question: ${array.join(" ")}`);
 
   const userAnswer = Number(askUser());
 
@@ -43,6 +44,7 @@ const game = (userName) => {
   return isCorrectAnswer;
 };
 
-const showRules = () => console.log('What number is missing in the progression?');
+const showRules = () =>
+  console.log("What number is missing in the progression?");
 
 export { game, showRules };

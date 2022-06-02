@@ -1,4 +1,5 @@
-import { askUser, getRandomNumber } from '../index.js';
+import { askUser } from "../index.js";
+import { randomInteger } from "../function.js";
 
 const isPrime = (number) => {
   for (let i = 2; i < number; i += 1) {
@@ -10,10 +11,10 @@ const isPrime = (number) => {
 };
 
 const parseUserAnswer = (userAnswer) => {
-  if (userAnswer === 'yes') {
+  if (userAnswer === "yes") {
     return true;
   }
-  if (userAnswer === 'no') {
+  if (userAnswer === "no") {
     return false;
   }
   return null;
@@ -23,18 +24,18 @@ const checkCorrectness = (
   isUserAnswerYes,
   numberPrime,
   userName,
-  userAnswer,
+  userAnswer
 ) => {
   let isAnswerCorrect = false;
   if ((isUserAnswerYes && numberPrime) || (!isUserAnswerYes && !numberPrime)) {
-    console.log('Correct!');
+    console.log("Correct!");
     isAnswerCorrect = true;
   }
   if ((!isUserAnswerYes && numberPrime) || (isUserAnswerYes && !numberPrime)) {
     console.log(
       `'${userAnswer}' is wrong answer ;(. Correct answer was '${
-        numberPrime ? 'yes' : 'no'
-      }'. Let's try again, ${userName}!`,
+        numberPrime ? "yes" : "no"
+      }'. Let's try again, ${userName}!`
     );
     isAnswerCorrect = false;
   }
@@ -46,8 +47,7 @@ const checkCorrectness = (
 };
 
 const game = (userName) => {
-  const randomLimit = 100;
-  const randomNumber = getRandomNumber(randomLimit);
+  const randomNumber = randomInteger(1, 100);
 
   console.log(`Question: ${randomNumber}`);
 
@@ -61,11 +61,12 @@ const game = (userName) => {
     isAnswerYes,
     numberPrime,
     userName,
-    userAnswer,
+    userAnswer
   );
   return isCorrectAnswer;
 };
 
-const showRules = () => console.log('Answer "yes" if the number is prime, otherwise answer "no".');
+const showRules = () =>
+  console.log('Answer "yes" if the number is prime, otherwise answer "no".');
 
 export { game, showRules };
